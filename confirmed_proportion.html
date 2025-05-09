@@ -1,0 +1,54 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}各国确诊数比例 - 新冠疫情数据分析{% endblock %}
+
+{% block page_title %}世界各国累计确诊人数的比例{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <img src="/static/imgResult/世界219个国家的累计确诊人数比例图.png" class="img-fluid" alt="世界各国累计确诊人数的比例">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>主要国家确诊人数比例数据表</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>国家</th>
+                                <th>累计确诊人数</th>
+                                <th>全球占比</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for country in countries %}
+                            <tr>
+                                <td>{{ country.Name }}</td>
+                                <td>{{ country.Confirmed }}</td>
+                                <td>{{ country.proportion|default:"计算中..." }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="3" class="text-center">暂无数据</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <p class="mt-3">注: 确诊人数小于100万的国家合并为"Others"类别</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

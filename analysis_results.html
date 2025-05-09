@@ -1,0 +1,79 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}分析结果{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4">COVID-19 数据分析结果</h2>
+  
+  <div class="card mb-4">
+    <div class="card-header bg-primary text-white">
+      <h3 class="card-title">数据分析摘要</h3>
+    </div>
+    <div class="card-body">
+      <p>本项目对全球COVID-19疫情数据进行了全面分析，主要包括以下几个方面：</p>
+      <ul>
+        <li>全球疫情总体变化趋势分析</li>
+        <li>各国确诊数据比较分析</li>
+        <li>人口比例与确诊率关系分析</li>
+        <li>康复率和死亡率分析</li>
+        <li>未来疫情发展预测</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-header bg-info text-white">
+          <h4 class="card-title">主要发现</h4>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>全球确诊病例持续增长，增长率略有波动</li>
+            <li>美国、印度和巴西是确诊病例最多的国家</li>
+            <li>小国家和地区的人口确诊比例往往更高</li>
+            <li>亚洲部分国家展现出较高的康复率</li>
+            <li>预测显示未来几天全球确诊病例将继续增加</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-header bg-warning text-dark">
+          <h4 class="card-title">数据来源</h4>
+        </div>
+        <div class="card-body">
+          <p>本分析使用的数据来自以下来源：</p>
+          <ul>
+            <li>世界卫生组织(WHO)公开数据</li>
+            <li>约翰·霍普金斯大学疫情数据库</li>
+            <li>各国官方发布的疫情数据</li>
+          </ul>
+          <p>数据截止日期：2020年12月10日</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header bg-success text-white">
+      <h3 class="card-title">详细分析结果</h3>
+    </div>
+    <div class="card-body">
+      <p>请点击下列链接查看详细的分析图表和数据：</p>
+      <div class="list-group">
+        <a href="{% url 'global_trend' %}" class="list-group-item list-group-item-action">全球疫情变化趋势</a>
+        <a href="{% url 'top_confirmed' %}" class="list-group-item list-group-item-action">确诊数量排名前20国家</a>
+        <a href="{% url 'top_confirmed_rate' %}" class="list-group-item list-group-item-action">确诊率最高的10个国家</a>
+        <a href="{% url 'highest_recovery_rate' %}" class="list-group-item list-group-item-action">康复率最高的10个国家</a>
+        <a href="{% url 'confirmed_proportion' %}" class="list-group-item list-group-item-action">全球确诊病例比例</a>
+        <a href="{% url 'confirmed_boxplot' %}" class="list-group-item list-group-item-action">确诊人数箱型图</a>
+        <a href="{% url 'prediction' %}" class="list-group-item list-group-item-action">未来疫情发展预测</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

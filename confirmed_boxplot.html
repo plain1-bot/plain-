@@ -1,0 +1,38 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}确诊数箱型图 - 新冠疫情数据分析{% endblock %}
+
+{% block page_title %}全球各国累计确诊人数的箱型图{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <img src="/static/imgResult/全球各个国家累计确诊人数的箱型图（去除最大5个异常数据后）.png" class="img-fluid" alt="全球各国累计确诊人数的箱型图">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>箱型图解析</h5>
+            </div>
+            <div class="card-body">
+                <p>箱型图展示了全球各国确诊人数的分布情况：</p>
+                <ul>
+                    <li>中位数（中间线）表示全球各国确诊人数的中间值</li>
+                    <li>箱体上边界代表第三四分位数（75%的国家确诊人数低于此值）</li>
+                    <li>箱体下边界代表第一四分位数（25%的国家确诊人数低于此值）</li>
+                    <li>红色线表示平均值，明显高于中位数，说明数据存在右偏</li>
+                    <li>箱体外的点表示离群值，代表确诊人数特别高的国家</li>
+                </ul>
+                <p>为了更好地展示大多数国家的情况，图表中已去除最大的5个异常数据。</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

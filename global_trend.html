@@ -1,0 +1,39 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}全球疫情趋势 - 新冠疫情数据分析{% endblock %}
+
+{% block page_title %}全球新冠疫情的总体变化趋势{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <img src="/static/imgResult/总体变化趋势.png" class="img-fluid" alt="全球新冠疫情的总体变化趋势">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>变化趋势分析</h5>
+            </div>
+            <div class="card-body">
+                <p>从2020年12月1日至15日的数据可以看出：</p>
+                <ul>
+                    <li>全球累计确诊人数持续增长，15天内增长了约1000万人</li>
+                    <li>全球确诊人数日增长率保持在0.10%-0.35%之间，波动较大</li>
+                    <li>现存确诊人数整体呈上升趋势</li>
+                    <li>全球累计死亡人数持续增长</li>
+                    <li>康复人数稳定增长</li>
+                    <li>检测人数持续增加</li>
+                </ul>
+                <p>整体来看，疫情仍处于扩散阶段，但康复人数的增长速度也较快，表明各国治疗水平有所提高。</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
